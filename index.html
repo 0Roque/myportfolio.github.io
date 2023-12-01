@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Jonas Roque">
+        <meta name="description" content="This Page contains the Holberton School Level 2 Challenge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> My Web Page</title>
+        <link rel="icon" href="Images/Icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="Styles/styles.css">
+        <link rel="stylesheet" href="Styles/styless2.css">
+
+        <script src="Scripts/behavior.js"></script>
+
+    </head>
+
+    <body class="works_on_smartphone">
+
+        <div class="container_body">
+
+            <header class="header">
+
+                <!-- Font Awesome CDN -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+                <div id="share-buttons" class="right">
+
+                    <!-- facebook -->
+                    <a class="facebook" target="blank" href=""><i class="fab fa-facebook"></i></a>
+                
+                    <!-- twitter -->
+                    <a class="twitter" target="blank" href=""><i class="fab fa-twitter"></i></a>
+            
+                </div>
+
+                <script>
+
+                    const link = encodeURI(window.location.href);
+                    const msg = encodeURIComponent('Hey, I found this cool Website!');
+                    const title = encodeURIComponent('A guy named Jonas did it for a Holberton School Challenge');
+        
+                    const fb = document.querySelector('.facebook');
+                    fb.href = `https://www.facebook.com/share.php?u=${link}`;
+        
+                    const twitter = document.querySelector('.twitter');
+                    twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=javascript,programming`;
+        
+                </script>
+
+                <ul>
+                    <li>
+                        <a href="index.html" class="logo"><img src="Images/Logo.png" alt="Your Logo" class="image"></a>
+                    </li>
+                    <li class="line">Jonas's Webpage</li>
+                    <li><a href="Pages/portifolio.html">Portilofio</a></li>
+                    <li><a href="Pages/about.html">About Me</a></li>
+                </ul>
+                
+            </header>
+
+            <main>
+
+                <div class="container_main">  
+
+                    <article class="article">
+        
+                        <h1>This is My First Webpage</h1>
+                        <p> I made it for a Holberton School Challenge</p>
+                        
+                        <h2>A Gandalf Image to click on, why not?</h2>
+                        <a href="https://en.wikipedia.org/wiki/Gandalf" target="_blank">
+                            <img src="Images/Gandalf.webp" alt="Gandalf">
+                        </a>
+
+                        <h4>Latest Page Updates:</h4>
+                        <p> - Added Custom Share Buttons for Social Media </p>
+                        <p> - Updated About Me Page </p>
+                        <P> - Added Portifolio Page </P>
+        
+                    </article>
+        
+                    <aside class="aside">
+        
+                        <div id="disqus_thread"></div>
+                        <script>
+                            /**
+                            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                            
+                            var disqus_config = function () {
+                            this.page.url = "http://35.180.60.111";  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = "PAGE_ID_JR"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                            };
+                            
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://my-web-page-1.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                    </aside>
+                
+                </div>
+
+            </main>
+        
+            <hr>
+
+            <footer class="footer">
+    
+                <p class="made">
+                    Made by Jonas Roque for
+                </p>
+
+                <p class="madeby">
+                    <a href="https://apply.holbertonschool.com" target="_blank">
+                        <img src="Images/Holberton_Aus.png" alt="Holberton School" class="school">
+                    </a>
+                </p>
+        
+            </footer>
+
+        </div>
+
+        <script id="dsq-count-scr" src="//my-web-page-1.disqus.com/count.js" async></script>
+
+    </body>
+
+
+
+</html>
