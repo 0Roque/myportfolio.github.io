@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Jonas Roque">
+        <meta name="description" content="This Page contains the Holberton School Level 2 Challenge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Vehicle Model</title>
+        <link rel="icon" href="../Images/Chip.png" type="image/x-icon">
+        <link rel="stylesheet" href="../Styles/styles.css">
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script async id="MathJax-script" src="https://polyfill.io/v3/3.0.0/all.js?features=es6"></script>
+
+    </head>
+
+    <body class="works_on_smartphone">
+
+        <div class="container_body">
+
+            <header class="header" id="top">
+
+                <ul>
+                    <li>
+                        <a href="../index.html" class="logo"><img src="../Images/Logo.png" alt="Your Logo" class="homeimage"></a>
+                    </li>
+                    <li class="title">Jonas's Webpage</li>
+                    <li>
+                        <a href="portfolio.html" class="image-link">
+                            <div class="image-container">
+                                <img src="/Images/Portfolio.png" alt="Your Image" class="image">
+                                <div class="text-container">
+                                    <div class="hover-text">Portfolio</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="image-link">
+                            <div class="image-container">
+                                <img src="/Images/AboutMe.png" alt="Your Image" class="image">
+                                <div class="text-container">
+                                    <div class="hover-text">About Me</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/0Roque" target="_blank">
+                            <div class="image-container">
+                                <img src="../Images/GitLogo.png" alt="Github" class="image">
+                                <div class="text-container">
+                                    <div class="hover-text">Git</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/jonasroques/" target="_blank">
+                            <div class="image-container">
+                                <img src="../Images/LinkedinLogo.png" alt="LinkedIn" class="image">
+                                <div class="text-container">
+                                    <div class="hover-text">LinkedIn</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </header>
+
+            <main>
+
+                <div class="container_main">  
+
+                    <article class="article">
+
+                        <h1>Mathematical Model - Vehicle Longitudinal Dynamics</h1>
+
+                        <div>
+
+                            <p>After a couple of years being involved in Formula Student competitions, I started to ask myself, "What's the next step for our car?"
+                                Today, many companies make data-driven decisions, and you and your Formula Student team can also do it with a vehicle model to find the answer to my question.
+                                With a simple model in hand, you can verify if your idea will really be worth it or if it's simply too expensive right now.
+                                I developed this model as a part of my Graduation Monograph. It is based on what's called the Bicycle model and can represent the acceleration and braking behavior of a vehicle despite its simplicity.
+                                The model is based on the following Free Body Diagram:
+                            </p>
+                        
+                            <figure class="im">
+                                <img src="../Images/Car.png" alt="Diagram">
+                                <figcaption>Figure 1: Free Body Diagram.</figcaption>
+                            </figure>
+                        
+                            <p>The table below describes the parameters shown in the free-body diagram along with the additional parameters necessary for the equations that describe the motion of the vehicle:</p>
+                        
+                            <div class="im">
+                                <img src="../Images/ParTable.png" alt="Table">
+                            </div>
+                        
+                            <h2>Longitudinal Movement</h2>
+                        
+                            <p>From Newton's Second Law, the equation describing longitudinal movement is determined as follows:</p>
+                        
+                            \[
+                            m \cdot \dot{V_x} = Fx - Fx_d - m g \sin{\alpha}
+                            \]
+                        
+                            <p>Where \(Fx\) is the sum of forces \(Fx_f\) and \(Fx_r\). The drag force depends on the vehicle's velocity relative to the wind speed. The force \(Fx_d\) is described as follows:</p>
+                        
+                            \[
+                            Fx_d = \frac{1}{2} \cdot C_d \rho A (V_x+V_w)^2 \cdot \operatorname{sgn}(V_x+V_w)
+                            \]
+                        
+                            <h2>Vertical Movement</h2>
+                        
+                            <p>For vertical movement, the force sum is null. The following equation expresses the balance:</p>
+                        
+                            \[
+                            Fz_f + Fz_r = mg\cos{\alpha} + Fz_d
+                            \]
+                        
+                            <p>The vertical aerodynamic force or downforce is expressed similarly to the drag force. The only difference is the coefficient \(C_l\) replacing \(C_d\). The coefficients are used to decompose the forces acting on the aerodynamic center of pressure (CP). For simplicity, it is assumed that the downforce is equally distributed on both axes to disregard the influence of the CP location.</p>
+                        
+                            <h2>Combined Movement or Load Transfer</h2>
+                        
+                            <p>The load distribution between the axes is a function of the total vehicle acceleration, its center of gravity height, and the wheelbase Milliken[1]. The following equation quantifies the load transfer between the vehicle's axes:</p>
+                        
+                            \[
+                            \Delta_W = \dot{V_x} \cdot m \cdot \frac{h}{a+b}
+                            \]
+                        
+                            <p>With the load transfer and the defined negative lift force, the normal load on each axis and consequently on each tire can be calculated. The following equations consider only one tire per axis, analogous to a bicycle:</p>
+                        
+                            \[
+                            Fz_f = \frac{-h \cdot (Fx_d + mg \sin{\alpha} + m \dot{V_x}) + b \cdot mg \cos{\alpha} }{a+b} + \frac{Fz_d}{2}
+                            \]
+                        
+                            \[
+                            Fz_r = \frac{+h \cdot (Fx_d + mg \sin{\alpha} + m \dot{V_x}) + b \cdot mg \cos{\alpha} }{a+b} + \frac{Fz_d}{2}
+                            \]
+                        
+                            <h2>Definition of Vehicle Acceleration</h2>
+                        
+                            <p>With the laws of longitudinal and vertical movement and load transfer defined, the goal is to express the vehicle's longitudinal acceleration:</p>
+                        
+                            \[
+                            \dot{V_x} = \frac{Fx_f+Fx_r -Fx_d - m g \sin{\alpha}}{m}
+                            \]
+                        
+                            <p>For a rear-wheel-drive car with zero rolling resistance, \(Fx_f\) = 0. \(Fx_r\) can be expressed as a function of the engine rotation \(\omega_e\), which in turn can be expressed in terms of the vehicle's speed thanks to the coupling between the driving wheel and the engine. In summary, the equation defining the rotation speed in terms of the vehicle's speed and the engaged gear is presented:</p>
+                        
+                            \[
+                            \omega_e = \frac{V_x \cdot G_i \cdot G_p \cdot G_f}{R_d}
+                            \]
+                        
+                            <p>Where \(G_p\) and \(G_f\) are, respectively, the primary and final reduction of the transmission. \(G_i\) represents the reduction corresponding to the i-th engaged gear out of the n available (Use the Manual to Search for this Info). \(R_d\) is the dynamic radius of the tire or the distance from the center of the driving axle to the rolling plane. Since the engine has its torque curve measured in terms of rpm, \(Fx_r\) can be defined in pure acceleration as follows:</p>
+                        
+                            \[
+                            Fx_r = \frac{Tor_e(\omega_e)G_iG_pG_f\eta_t}{R_d}
+                            \]
+                        
+                            <p>\(Tor_e(\omega_e\)) represents the engine torque curve given its rotation, and \(\eta_t\) represents the transmission efficiency. If you use the torque curve measurement in a vehicle dynamometer, make \(\eta_t = 1\), so the torque values already include the mechanical losses of the transmission. If you get the torque curve from the engine manufacturer or from an engine dynamometer, you need to account for the losses along the driveline.</p>
+                        
+                            <h2>Tire Model and Tractive Limit</h2>
+                        
+                            <p>In competition vehicles, tire grip is often the primary limiting factor for acceleration/deceleration. In wet track conditions, the dependence on grip becomes even more evident. Vehicle acceleration is limited by grip, and if the tractive force of an axle exceeds the traction limit of the track, the wheels on that axle tend to slip on the pavement Ehsani[2]. The Slip Ratio for acceleration is described as follows:</p>
+                        
+                            \[
+                            s_a = \left(1-\frac{V_x}{R_d*\omega}\right) \cdot 100%
+                            \]
+                        
+                            <p>Where \(\omega\) is the angular velocity of the driving wheel. For braking, the slip is defined as:</p>
+                        
+                            \[
+                            s_b = \left(1-\frac{R_d*\omega}{V_x}\right) \cdot 100%
+                            \]
+                        
+                            <p>Experimental data relate the longitudinal force generated on the tire to the normal force acting on it and its slip. Graphically, the following typical curve is observed:</p>
+                        
+                            <figure class="im">
+                                <img src="../Images/SlipR.png" alt="Img">
+                                <figcaption>Tractive Effort Coefficient in function of Slip Ratio [2].</figcaption>
+                            </figure>
+                        
+                            <p>Working with tire data, Pacejka [3] developed the so-called "Magic Formula" that interpolates experimental data using the function \(y = \sin{[\arctan(x)]}\), where \(x\) represents Slip and \(y\) denotes normalized longitudinal force. The Simscape package in MATLAB has a package that contains a tire model for based on the Magic Formula, but before that, you need to get your raw tire data from the <a href="https://calspan.com/automotive/fsae-ttc" target="_blank" rel="noopener noreferrer" class="blink">Tire Test Consortium (TTC)</a>. 
+                                After treating the TTC data, you will be able to fill the Magic Formula with the necessary coefficients and finally assemble your own vehicle model. You can easily implement it in Simulink since it was made for dynamic systems simulation and it's usually possible to get a student license for free. You can also implement it using Python and even create simple animations using PyGame library. It's really up to you, the important thing is to understand the imporance of modeling your problem and taking smart decisions using all info that your own car can provide.</p>
+
+                            <h2>Improving the Model</h2>
+
+                            <p>Get more data to enhance the model's performance. Consider incorporating rolling resistance by conducting a Coast Down test. Utilizing a dynamometer for tests enables the acquisition of torque curves for partial throttle openings, facilitating data interpolation for increased accuracy.</p>
+
+                            <p>For those deeply engaged in vehicle dynamics, introducing inertia into the load transfer modeling is crucial. The current definition overlooks transient effects, instantly jumping to steady-state values, introducing significant imprecision. 
+                                If your team has mastered simple models, explore modeling lateral dynamics to predict your car's behavior in a complete lap time simulation, covering all dynamic events. 
+                                The reference list below can provide further guidance beyond the scope of this article. Good luck!</p>
+
+                            <h2>Be Skeptical</h2>
+
+                            <p>Your model will never achieve perfection, none do. If you can predict your time in the Acceleration event with a precision of 0.1s, you will surpass many teams unable to predict any time at all. Don't waste our precicious time chasing perfection, this is not Formula 1, and even there, mistakes are made. 
+                                The track tests are just as important as the modeling process. It is on the track that data must be gathered, and it is there that results are achieved!</p>
+
+                            <h4>Reference List</h4>
+
+                            <ol>
+                                <li>Milliken WF Milliken DL. Race Car Vehicle Dynamics. 2. Printing ed. Warrendale Pa: Society of Automotive Engineers; 1995.</li>
+                                <li>Ehsani, M., Gao, Y., & Emadi, A. (2010). Modern Electric, Hybrid Electric, and Fuel Cell Vehicles: Fundamentals, Theory, and Design, Second Edition (2nd ed.). CRC Press.</li>
+                                <li>Pacejka, H. B.. Tyre and vehicle dynamics. Germany, Butterworth-Heinemann, 2006.</li>
+
+                            </ol>
+
+                            <a href="#top" class="top-link">Go to Top</a>
+
+                        </div>
+                
+                    </article>
+
+                </div>
+
+            </main>
+        
+            <footer class="footer">
+
+                <div class="fcontainer">
+
+                    <p class="made"> Made by Jonas Roque</p>
+
+                    <a href="mailto:jonas.roques@gmail.com" class="made">
+                        <img src="/Images/Mail.png" alt="MailMe" class="footimage">
+                    </a>
+                </div>
+                
+            </footer>
+
+        </div>
+
+    </body>
+
+</html>
