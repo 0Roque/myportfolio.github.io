@@ -9,12 +9,9 @@
         <meta name="description" content="This Page contains the Holberton School Level 2 Challenge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title> My Web Page</title>
-        <link rel="icon" href="Images/Icon.png" type="image/x-icon">
+        <title> Home</title>
+        <link rel="icon" href="Images/Gear.png" type="image/x-icon">
         <link rel="stylesheet" href="Styles/styles.css">
-        <link rel="stylesheet" href="Styles/styless2.css">
-
-        <script src="Scripts/behavior.js"></script>
 
     </head>
 
@@ -24,42 +21,53 @@
 
             <header class="header">
 
-                <!-- Font Awesome CDN -->
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-                <div id="share-buttons" class="right">
-
-                    <!-- facebook -->
-                    <a class="facebook" target="blank" href=""><i class="fab fa-facebook"></i></a>
-                
-                    <!-- twitter -->
-                    <a class="twitter" target="blank" href=""><i class="fab fa-twitter"></i></a>
-            
-                </div>
-
-                <script>
-
-                    const link = encodeURI(window.location.href);
-                    const msg = encodeURIComponent('Hey, I found this cool Website!');
-                    const title = encodeURIComponent('A guy named Jonas did it for a Holberton School Challenge');
-        
-                    const fb = document.querySelector('.facebook');
-                    fb.href = `https://www.facebook.com/share.php?u=${link}`;
-        
-                    const twitter = document.querySelector('.twitter');
-                    twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=javascript,programming`;
-        
-                </script>
-
                 <ul>
                     <li>
-                        <a href="index.html" class="logo"><img src="Images/Logo.png" alt="Your Logo" class="image"></a>
+                        <a href="index.html" class="logo"><img src="Images/Logo.png" alt="Your Logo" class="homeimage"></a>
                     </li>
-                    <li class="line">Jonas's Webpage</li>
-                    <li><a href="Pages/portifolio.html">Portilofio</a></li>
-                    <li><a href="Pages/about.html">About Me</a></li>
+                    <li class="title">Jonas's Webpage</li>
+                    <li>
+                        <a href="Pages/portfolio.html" class="image-link">
+                            <div class="image-container">
+                                <img src="Images/Portfolio.png" alt="Your Image" class="image">
+                                <div class="text-container">
+                                    <div class="hover-text">Portfolio</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Pages/about.html" class="image-link">
+                            <div class="image-container">
+                                <img src="Images/AboutMe.png" alt="Your Image" class="image">
+                                <div class="text-container">
+                                    <div class="hover-text">About Me</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/0Roque" target="_blank">
+                            <div class="image-container">
+                                <img src="Images/GitLogo.png" alt="Github" class="image">
+                                <div class="text-container">
+                                    <div class="hover-text">Git</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/jonasroques/" target="_blank">
+                            <div class="image-container">
+                                <img src="Images/LinkedinLogo.png" alt="LinkedIn" class="image">
+                                <div class="text-container">
+                                    <div class="hover-text">LinkedIn</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
-                
+
             </header>
 
             <main>
@@ -68,18 +76,20 @@
 
                     <article class="article">
         
-                        <h1>This is My First Webpage</h1>
-                        <p> I made it for a Holberton School Challenge</p>
+                        <h1>This is My Personal Webpage</h1>
+                        <p> I created this Webpage to showcase my past projects and facilitate the exchange of knowledge within the Formula Student community.</p>
                         
-                        <h2>A Gandalf Image to click on, why not?</h2>
-                        <a href="https://en.wikipedia.org/wiki/Gandalf" target="_blank">
-                            <img src="Images/Gandalf.webp" alt="Gandalf">
-                        </a>
+                        <h2>Personal Update - Living Down Under</h2>
+                        
+                        <figure class="im">
+                            <img src="Images/RS-W529B.png" alt="Diagram">
+                            <figcaption>No Joke, This is A real Road Sign in Australia, RS-W529B.</figcaption>
+                        </figure>
 
-                        <h4>Latest Page Updates:</h4>
-                        <p> - Added Custom Share Buttons for Social Media </p>
+                        <h3>Latest Page Updates:</h3>
+                        <p> - Added Custom Navigation Buttons </p>
                         <p> - Updated About Me Page </p>
-                        <P> - Added Portifolio Page </P>
+                        <P> - Added first Article Page </P>
         
                     </article>
         
@@ -114,17 +124,16 @@
             <hr>
 
             <footer class="footer">
-    
-                <p class="made">
-                    Made by Jonas Roque for
-                </p>
 
-                <p class="madeby">
-                    <a href="https://apply.holbertonschool.com" target="_blank">
-                        <img src="Images/Holberton_Aus.png" alt="Holberton School" class="school">
+                <div class="fcontainer">
+
+                    <p class="made"> Made by Jonas Roque</p>
+
+                    <a href="mailto:jonas.roques@gmail.com" class="made">
+                        <img src="../Images/Mail.png" alt="MailMe" class="footimage">
                     </a>
-                </p>
-        
+                </div>
+                
             </footer>
 
         </div>
