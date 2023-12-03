@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Importing webfonts */
 @import url(https://fonts.googleapis.com/css?family=Yeseva+One);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700italic,400italic);
@@ -349,4 +350,357 @@ img {
 
 img.small {
 	width: 100px;
+=======
+/* Importing webfonts */
+@import url(https://fonts.googleapis.com/css?family=Yeseva+One);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700italic,400italic);
+
+/* Header Style*/
+/* ------------------------------------------------------------------------------------------*/
+.header {
+    height: 150px;
+    background-color: #282728;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid rgb(221,221,221);
+	transition: border-bottom-color 1s ease;
+}
+
+.homeimage{
+    display: inline-block;
+    align-items: center;
+    max-height: 100px;
+    border-radius: 10px;
+    vertical-align: center;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Add overflow property to hide overflowing text */
+}
+
+.image {
+    display: block; /* Change display to block to allow for width adjustment */
+    width: 100px; /* Set width to 100% to make the image responsive */
+    height: auto; /* Maintain aspect ratio while shrinking */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.text-container {
+    position: absolute;
+    bottom: 0; /* Position text at the bottom */
+    left: 0;
+    width: 100%;
+    text-align: center; /* Center text */
+    background-color: #282728;; /* Add a semi-transparent background */
+    color: #fff; /* Set text color to white */
+    transform: translateY(100%); /* Move text below the image */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.image-container:hover .image {
+    transform: scale(0.8); /* Shrink the image on hover */
+}
+
+.image-container:hover .text-container {
+    font-size: 20px; /* Set the desired font size */
+    transform: translateY(0); /* Display text below the image on hover */
+}
+
+.title{
+    color: white;
+    font-size: 40px;
+    margin-right: 180px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Body Style*/
+/* ------------------------------------------------------------------------------------------*/
+body {
+	font-family: 'Josefin Sans', serif;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+ul li a {
+    color: white;
+    font-size: 30px;
+    margin-right: 50px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #fada5f;
+}
+
+.container_main {
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.container_body {
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6, header {
+	font-family: 'Yeseva One', sans-serif;
+}
+
+.heading{
+
+    font-size: 40px;
+    color: #e1003d;
+
+}
+
+.table{
+    width: 100%;
+
+}
+
+.article {
+    flex: 2;
+    background-color: #f0f0f0;
+    overflow-y: auto
+}
+
+.aside {
+    flex: 1;
+    background-color: #e0e0e0;
+    overflow-y: auto
+}
+
+.footer {
+    background-color: #282728;
+    color: white;
+}
+
+.alink{
+    display: block;
+    font-size: 32px;
+	margin: 30px 0 15px;
+    text-decoration: none;
+    color: #282728;
+}
+
+.blink{
+    font-size: 20px;
+    text-decoration: none;
+    color: #282728;
+}
+
+
+.alink:hover{
+    opacity: 0.3;
+    transition: transform 0.3s ease;
+}
+
+.top-link {
+    display: block;
+    text-align: center;
+    margin-top: 3vh;
+    background-color: #282728;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer Style*/
+/* ------------------------------------------------------------------------------------------*/
+footer {
+	padding: 5px 15px;
+	height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.made {
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+}
+
+.fcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.footimage {
+    max-height: 40px;
+    margin: 0 20px;
+    height: auto; /* Adjust margin as needed */
+}
+
+.im {
+
+    text-align: center;
+    display: block; /* Make the container a block so it can have margins */
+    align-items: center;
+    margin: auto; /* Adjust the margin as needed for spacing */
+    margin-bottom: 20px;
+}
+
+html, body {
+	height: 100%;
+	min-height: 100%;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+aside {
+	background: #FAFAFA;
+}
+aside p {
+	border: 1px solid #bbb;
+	background: #ddd;
+	color: black;
+}
+footer a {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+/* Positioning and margins */
+
+@media (min-width: 1100px) {
+	body {
+		width: 1100px;
+		margin: 0 auto;
+	}
+}
+
+article {
+	padding: 50px 15px;
+}
+article > *:first-child {
+	margin-top: 0;
+}
+aside {
+	padding: 50px 15px;
+}
+
+/* Aside */
+
+aside p {
+	border-radius: 10px;
+	padding: 20px 20px;
+}
+
+/* Text styles and margins */
+
+p {
+	margin-bottom: 15px;
+	font-size: 20px;
+    text-align: justify;
+}
+h1 {
+	font-size: 36px;
+	margin: 40px 0 20px;
+}
+h2 {
+	font-size: 32px;
+	margin: 30px 0 15px;
+}
+h3 {
+	font-size: 28px;
+	margin: 25px 0 10px;
+}
+h4 {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 20px 0 10px;
+    text-align: center;
+}
+h5 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px 0 10px;
+}
+h6 {
+	font-weight: bold;
+	margin: 5px 0;
+}
+
+@media (max-width: 800px) {
+  body.works_on_smartphone {
+  	display: block;
+  }
+  body.works_on_smartphone main {
+  	display: block;
+  }
+  header .right {
+  	float: none;
+  }
+}
+
+/* image JS challenge */
+
+img {
+	max-width: 100%;
+}
+
+img.small {
+	width: 100px;
+>>>>>>> 937e438a73311735b8901426730c78f6c0be46c7
 }
