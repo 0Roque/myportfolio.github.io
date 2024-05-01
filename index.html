@@ -25,9 +25,17 @@
 
                     <div class="logo">
 
-                        <a href="/index.html">
-                          <img src="Images/Home.png" alt="Logo" class="homeimage">
+                        <a href="#" id="homeLink">
+                            <img src="Images/Home.png" alt="Logo" class="homeimage">
                         </a>
+                        
+                        <script>
+                            // Get the current domain
+                            var currentDomain = window.location.origin;
+                        
+                            // Set the href attribute of the home link dynamically
+                            document.getElementById("homeLink").href = currentDomain + "/index.html";
+                        </script>
 
                     </div>
 
