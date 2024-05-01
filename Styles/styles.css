@@ -345,4 +345,8 @@ footer {
         margin-bottom: 10px;
     }
 
+    .im img {
+        max-width: 90%; /* Adjust max-width for smaller screens */
+    }
+
 }
