@@ -244,19 +244,22 @@ p {
 }
 
 .im {
-    text-align: center; /* Center the image container div */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
     margin: 10px auto; /* Add some margin and center horizontally */
 }
 
 .im img {
     border: 1px solid #ddd;
     padding: 5px;
-    max-width: 500px; /* Adjust max-width as needed */
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
     transition: transform 0.2s ease-in-out;
 }
 
 .im img:hover {
-    transform: scale(1.2s);
+    transform: scale(1.2);
 }
   
 /* Code Blocks */
@@ -343,6 +346,10 @@ footer {
 
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .im img {
+        max-width: 90%; /* Adjust max-width for smaller screens */
     }
 
 }
