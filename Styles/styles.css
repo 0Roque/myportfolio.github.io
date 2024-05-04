@@ -74,36 +74,12 @@ body {
 .headerbox {
 
     display: flex;
+    flex: 1;
     flex-direction: column;
     vertical-align: center;
     justify-content: center;
     align-items: flex-end;
     
-}
-
-.box-1{
-    margin-left: 20px;
-    width: 150px;
-}
-
-.box-2{
-    margin-left: 10px;
-    width: 300px;
-    margin-right: 500px;
-    align-self: center;
-    justify-content: center;
-}
-
-.box-3{
-
-    margin-right: 10px;
-    width: 120px;
-}
-
-.box-4{
-
-    margin-right: 20px;
-    width: 120px;
 }
 
 .headerbox img {
@@ -115,12 +91,47 @@ body {
     display: inline-block;
 }
 
+.box-1{
+    flex: 0.1;
+    border: 1px solid pink;
+    justify-content: center;
+}
+
+.logo {
+    position: relative;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+}
+
 .logo a img {
     transition: transform 1.2s ease; /* Animation duration and easing */
 }
 
 .logo:hover a img {
     transform: rotate(180deg); /* Rotate by 360 degrees on hover */
+}
+
+.box-2{
+    flex: 0.7;
+    /*width: 300px;
+    margin-right: 70%;*/
+    align-self: center;
+    justify-content: center;
+    border: 1px solid pink;
+}
+
+.box-3{
+
+    flex: 0.1;
+    border: 1px solid pink;
+}
+
+.box-4{
+
+    flex: 0.1;
+    border: 1px solid pink;
 }
 
 .title {
@@ -146,6 +157,8 @@ body {
     display: inline-block;
     overflow: hidden;
     max-width: 100%;
+    margin: 0 auto;
+    
 }
 
 .image-container:hover .image {
@@ -218,6 +231,16 @@ body {
     color: #fff;
 }
 
+.math-container {
+    max-width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+.math-equation {
+    font-size: 18px; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Add some space between equations */
+}
+
 /*Posts*/
 
 /* General Styling */
@@ -229,7 +252,6 @@ article {
     font-family: Georgia, serif; /* Serif font for academic style */
     text-align: justify; /* Justify text for a formal look */
 }
-
 
 h2 {
     font-size: 1.5em;
@@ -286,8 +308,9 @@ pre {
 
 /* Styles for the button */
 .return-to-top-btn {
-    display: block;
-    width: 100%;
+    display: flex;
+    margin-inline: 10% auto;
+    width: 80%;
     padding: 8px 16px;
     background-color: #333;
     text-decoration: none;
@@ -295,6 +318,8 @@ pre {
     margin-top: 15px;
     color: #fff;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Hover effect */
@@ -350,6 +375,26 @@ footer {
 
     .im img {
         max-width: 90%; /* Adjust max-width for smaller screens */
+    }
+
+    .return-to-top-btn{
+
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-inline: 0 auto;
+    }
+
+    .math-container {
+        font-size: 16px;
+        max-width: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+    }
+
+    .math-equation {
+        font-size: 10px; /* Adjust font size as needed */
+        margin-bottom: 10px; /* Add some space between equations */
     }
 
 }
